@@ -80,41 +80,41 @@
             </div>
         </div>
     @endif
+    
+    <style>
+        .cart-container {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 250px);
+        }
+        
+        .empty-cart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .cart-summary {
+            padding: 15px;
+            background-color: #f8f9fa;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            margin: 0 5px;
+        }
+    </style>
 </div>
-
-<style>
-    .cart-container {
-        display: flex;
-        flex-direction: column;
-        height: calc(100vh - 250px);
-    }
-    
-    .empty-cart {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-    }
-    
-    .cart-items {
-        flex: 1;
-        overflow-y: auto;
-        border-bottom: 1px solid #dee2e6;
-    }
-    
-    .cart-summary {
-        padding: 15px;
-        background-color: #f8f9fa;
-    }
-    
-    .quantity-control {
-        display: flex;
-        align-items: center;
-    }
-    
-    .quantity-input {
-        width: 50px;
-        text-align: center;
-        margin: 0 5px;
-    }
-</style>

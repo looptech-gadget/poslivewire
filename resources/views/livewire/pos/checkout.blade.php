@@ -175,25 +175,25 @@
             </div>
         @endif
     </div>
+    
+    <style>
+        .checkout-container {
+            width: 90%;
+            max-width: 1000px;
+        }
+        
+        .checkout-card {
+            width: 100%;
+        }
+        
+        .cart-summary-table {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .receipt-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
 </div>
-
-<style>
-    .checkout-container {
-        width: 90%;
-        max-width: 1000px;
-    }
-    
-    .checkout-card {
-        width: 100%;
-    }
-    
-    .cart-summary-table {
-        max-height: 300px;
-        overflow-y: auto;
-    }
-    
-    .receipt-container {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-</style>

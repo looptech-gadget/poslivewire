@@ -85,84 +85,84 @@
         <p>Please come again</p>
         <p>{{ now()->format('d/m/Y h:i A') }}</p>
     </div>
+    
+    <style>
+        .receipt {
+            font-family: 'Courier New', Courier, monospace;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+        
+        .receipt-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .receipt-header h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+        
+        .receipt-header h3 {
+            margin: 5px 0;
+        }
+        
+        .receipt-header p {
+            margin: 3px 0;
+            font-size: 12px;
+        }
+        
+        .receipt-divider {
+            border-top: 1px dashed #000;
+            margin: 10px 0;
+        }
+        
+        .receipt-body {
+            margin-bottom: 10px;
+        }
+        
+        .receipt-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        
+        .receipt-table th, .receipt-table td {
+            padding: 3px 0;
+        }
+        
+        .receipt-summary {
+            width: 100%;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        
+        .receipt-summary td {
+            padding: 2px 0;
+        }
+        
+        .total-row {
+            font-weight: bold;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-end {
+            text-align: right;
+        }
+        
+        .receipt-footer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            border-top: 1px dashed #000;
+            padding-top: 10px;
+        }
+    </style>
 </div>
-
-<style>
-    .receipt {
-        font-family: 'Courier New', Courier, monospace;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 10px;
-        border: 1px solid #ddd;
-        background-color: white;
-    }
-    
-    .receipt-header {
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    
-    .receipt-header h2 {
-        margin: 0;
-        font-size: 18px;
-    }
-    
-    .receipt-header h3 {
-        margin: 5px 0;
-    }
-    
-    .receipt-header p {
-        margin: 3px 0;
-        font-size: 12px;
-    }
-    
-    .receipt-divider {
-        border-top: 1px dashed #000;
-        margin: 10px 0;
-    }
-    
-    .receipt-body {
-        margin-bottom: 10px;
-    }
-    
-    .receipt-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 12px;
-    }
-    
-    .receipt-table th, .receipt-table td {
-        padding: 3px 0;
-    }
-    
-    .receipt-summary {
-        width: 100%;
-        font-size: 12px;
-        margin-top: 5px;
-    }
-    
-    .receipt-summary td {
-        padding: 2px 0;
-    }
-    
-    .total-row {
-        font-weight: bold;
-    }
-    
-    .text-center {
-        text-align: center;
-    }
-    
-    .text-end {
-        text-align: right;
-    }
-    
-    .receipt-footer {
-        text-align: center;
-        margin-top: 10px;
-        font-size: 12px;
-        border-top: 1px dashed #000;
-        padding-top: 10px;
-    }
-</style>

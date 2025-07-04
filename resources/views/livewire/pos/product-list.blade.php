@@ -1,4 +1,59 @@
 <div class="product-grid">
+    <style>
+        .product-card {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid #ddd;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f9fa;
+        }
+        
+        .product-image img {
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .no-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            color: #adb5bd;
+        }
+        
+        .out-of-stock {
+            opacity: 0.6;
+        }
+        
+        .out-of-stock-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+    
     @if($products->isEmpty())
         <div class="alert alert-info">
             No products found. Try a different category or search term.
@@ -34,58 +89,3 @@
         </div>
     @endif
 </div>
-
-<style>
-    .product-card {
-        cursor: pointer;
-        transition: all 0.2s ease;
-        border: 1px solid #ddd;
-    }
-    
-    .product-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .product-image {
-        height: 120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        position: relative;
-        background-color: #f8f9fa;
-    }
-    
-    .product-image img {
-        max-height: 100%;
-        object-fit: contain;
-    }
-    
-    .no-image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-        color: #adb5bd;
-    }
-    
-    .out-of-stock {
-        opacity: 0.6;
-    }
-    
-    .out-of-stock-label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.5);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-    }
-</style>

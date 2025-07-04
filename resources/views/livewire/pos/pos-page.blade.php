@@ -54,33 +54,33 @@
             </div>
         </div>
     @endif
+    
+    <style>
+        .pos-container {
+            position: relative;
+        }
+        
+        .checkout-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .products-container {
+            max-height: calc(100vh - 250px);
+            overflow-y: auto;
+        }
+        
+        .search-container {
+            width: 300px;
+        }
+    </style>
 </div>
-
-<style>
-    .pos-container {
-        position: relative;
-    }
-    
-    .checkout-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-    
-    .products-container {
-        max-height: calc(100vh - 250px);
-        overflow-y: auto;
-    }
-    
-    .search-container {
-        width: 300px;
-    }
-</style>
