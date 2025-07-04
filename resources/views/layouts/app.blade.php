@@ -65,7 +65,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dashboard') }}">
+                                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('pos.index') }}">
+                                    <i class="fas fa-cash-register"></i> POS
+                                </a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -107,6 +118,9 @@
             </div>
         </nav>
 
+        <!-- Include alerts partial -->
+        @include('layouts.partials.alerts')
+
         <main class="py-4">
             @yield('content')
         </main>
@@ -117,7 +131,73 @@
     
     <!-- Custom JavaScript -->
     <script>
-        // Add any custom JavaScript here
+        // Thermal printing functionality
+        function printReceipt(receiptContent) {
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>Receipt</title>
+                    <style>
+                        body {
+                            font-family: 'Courier New', Courier, monospace;
+                            font-size: 12px;
+                            width: 80mm;
+                            margin: 0;
+                            padding: 5mm;
+                        }
+                        .receipt-header {
+                            text-align: center;
+                            margin-bottom: 10px;
+                        }
+                        .receipt-header h2 {
+                            margin: 0;
+                            font-size: 14px;
+                        }
+                        .receipt-header p {
+                            margin: 5px 0;
+                        }
+                        .receipt-body {
+                            margin-bottom: 10px;
+                        }
+                        .receipt-body table {
+                            width: 100%;
+                            border-collapse: collapse;
+                        }
+                        .receipt-body th, .receipt-body td {
+                            text-align: left;
+                            padding: 3px 0;
+                        }
+                        .receipt-body .right {
+                            text-align: right;
+                        }
+                        .receipt-footer {
+                            text-align: center;
+                            margin-top: 10px;
+                            border-top: 1px dashed #000;
+                            padding-top: 10px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    ${receiptContent}
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.focus();
+            setTimeout(() => {
+                printWindow.print();
+                printWindow.close();
+            }, 500);
+        }
+
+        // Listen for print receipt event
+        document.addEventListener('livewire:initialized', () => {
+            Livewire.on('printReceipt', data => {
+                printReceipt(data[0].receiptContent);
+            });
+        });
     </script>
 </body>
 </html>
